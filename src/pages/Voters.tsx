@@ -27,7 +27,7 @@ const mockVoters: VoterData[] = [
     age: 45,
     gender: 'M',
     phone: '+91 98765 43210',
-    address: '123 Gandhi Street, Ramanathapuram, Coimbatore - 641002',
+    address: '123 Gandhi Street, Ramanathapuram, Madurai - 625002',
     boothNumber: 'B-1901',
     tags: ['supporter', 'member'],
     photoUrl: undefined,
@@ -41,7 +41,7 @@ const mockVoters: VoterData[] = [
     age: 38,
     gender: 'F',
     phone: '+91 87654 32109',
-    address: '456 Nehru Road, Ramanathapuram, Coimbatore - 641002',
+    address: '456 Nehru Road, Ramanathapuram, Madurai - 625002',
     boothNumber: 'B-1901',
     tags: ['postal_voter', 'senior_citizen'],
     photoUrl: undefined,
@@ -55,7 +55,7 @@ const mockVoters: VoterData[] = [
     age: 29,
     gender: 'M',
     phone: undefined,
-    address: '789 Anna Street, Ramanathapuram, Coimbatore - 641002',
+    address: '789 Anna Street, Ramanathapuram, Madurai - 625002',
     boothNumber: 'B-1902',
     tags: ['supporter'],
     photoUrl: undefined,
@@ -69,7 +69,7 @@ const mockVoters: VoterData[] = [
     age: 52,
     gender: 'F',
     phone: '+91 76543 21098',
-    address: '321 Periyar Street, Singanallur, Coimbatore - 641005',
+    address: '321 Periyar Street, Singanallur, Madurai - 625020',
     boothNumber: 'B-6101',
     tags: ['member', 'senior_citizen'],
     photoUrl: undefined,
@@ -83,7 +83,7 @@ const mockVoters: VoterData[] = [
     age: 34,
     gender: 'M',
     phone: '+91 65432 10987',
-    address: '654 Kamaraj Road, Singanallur, Coimbatore - 641005',
+    address: '654 Kamaraj Road, Singanallur, Madurai - 625020',
     boothNumber: 'B-6101',
     tags: ['supporter', 'disabled'],
     photoUrl: undefined,
@@ -97,7 +97,7 @@ const mockVoters: VoterData[] = [
     age: 31,
     gender: 'F',
     phone: '+91 54321 09876',
-    address: '987 Bharathi Street, Ramanathapuram, Coimbatore - 641002',
+    address: '987 Bharathi Street, Ramanathapuram, Madurai - 625002',
     boothNumber: 'B-1901',
     tags: ['member', 'supporter'],
     photoUrl: undefined,
@@ -111,7 +111,7 @@ const mockVoters: VoterData[] = [
     age: 58,
     gender: 'M',
     phone: '+91 43210 98765',
-    address: '654 Tilak Road, Singanallur, Coimbatore - 641005',
+    address: '654 Tilak Road, Singanallur, Madurai - 625020',
     boothNumber: 'B-6101',
     tags: ['senior_citizen', 'postal_voter'],
     photoUrl: undefined,
@@ -125,7 +125,7 @@ const mockVoters: VoterData[] = [
     age: 42,
     gender: 'F',
     phone: '+91 32109 87654',
-    address: '321 Subash Road, Ramanathapuram, Coimbatore - 641002',
+    address: '321 Subash Road, Ramanathapuram, Madurai - 625002',
     boothNumber: 'B-1902',
     tags: ['member'],
     photoUrl: undefined,
@@ -214,7 +214,7 @@ export const Voters: React.FC = () => {
         break;
       case 'send_whatsapp':
         if (voter?.phone) {
-          const message = `Hello ${voter.firstName}, this is from DMK Coimbatore. Thank you for your support!`;
+          const message = `Hello ${voter.firstName}, this is from DMK Madurai. Thank you for your support!`;
           const whatsappUrl = `https://wa.me/${voter.phone.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(message)}`;
           window.open(whatsappUrl, '_blank');
         } else {
