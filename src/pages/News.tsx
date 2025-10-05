@@ -20,60 +20,54 @@ import {
 const mockNews = [
   {
     id: 1,
-    title_ta: 'மதுரை மாநகராட்சியில் புதிய சாலை திட்டங்கள் அறிவிப்பு',
-    title_en: 'New road projects announced in Madurai Corporation',
+    title_ta: 'கோயம்புத்தூர் மாநகராட்சியில் புதிய சாலை திட்டங்கள் அறிவிப்பு',
+    title_en: 'New road projects announced in Coimbatore Corporation',
+    author: 'DMK Media Cell',
+    date: '2024-03-15',
+    summary_en: 'New road development projects worth ₹50 crores announced within Coimbatore Corporation limits.',
+    summary_ta: 'கோயம்புத்தூர் மாநகராட்சி வரம்பில் ₹50 கோடி மதிப்பிலான புதிய சாலை அபிவிருத்தி திட்டங்கள் அறிவிக்கப்பட்டுள்ளன.',
+    image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&h=450&fit=crop',
     category: 'Infrastructure',
-    category_ta: 'உள்கட்டமைப்பு',
-    summary_ta: 'மதுரை மாநகராட்சி எல்லையில் 50 கோடி ரூபாய் மதிப்பிலான புதிய சாலை மேம்பாட்டு திட்டங்கள் அறிவிக்கப்பட்டுள்ளன.',
-    summary_en: 'New road development projects worth ₹50 crores announced within Madurai Corporation limits.',
-    publishedAt: '2024-01-16T10:30:00Z',
-    source: 'The Hindu Tamil',
-    imageUrl: '/api/placeholder/400/200',
-    likes: 234,
-    comments: 45,
-    ward: 'Multiple Wards',
-    constituency: 'Madurai South'
+    tags: ['Infrastructure', 'Roads', 'Development'],
+    ward: 'Singanallur',
+    constituency: 'Coimbatore South'
   },
   {
     id: 2,
-    title_ta: 'மதுரை மீனாட்சி அம்மன் கோவிலில் சிறப்பு அபிஷேகம்',
-    title_en: 'Special abhishekam at Madurai Meenakshi Amman Temple',
+    title_ta: 'கோயம்புத்தூர் மாரியம்மன் கோவிலில் சிறப்பு அபிஷேகம்',
+    title_en: 'Special abhishekam at Coimbatore Mariamman Temple',
+    author: 'DMK Social Wing',
+    date: '2024-03-12',
+    summary_en: 'Special Masi month abhishekam to be conducted at Coimbatore Mariamman Temple.',
+    summary_ta: 'கோயம்புத்தூர் மாரியம்மன் கோவிலில் மாசி மாத சிறப்பு அபிஷேகம் நடத்தப்படுகிறது.',
+    image: 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&h=450&fit=crop',
     category: 'Religious',
-    category_ta: 'மத சார்ந்த',
-    summary_ta: 'மதுரை மீனாட்சி அம்மன் கோவிலில் மாசி மாத சிறப்பு அபிஷேகம் நடைபெற உள்ளது.',
-    summary_en: 'Special Masi month abhishekam to be conducted at Madurai Meenakshi Amman Temple.',
-    publishedAt: '2024-01-16T08:15:00Z',
-    source: 'Dinamalar',
-    imageUrl: '/api/placeholder/400/200',
-    likes: 567,
-    comments: 89,
-    ward: 'Central Madurai',
-    constituency: 'Madurai Central'
+    tags: ['Temple', 'Religious', 'Culture'],
+    ward: 'Central Coimbatore',
+    constituency: 'Coimbatore Central'
   },
   {
     id: 3,
-    title_ta: 'மதுரை கிழக்கு தொகுதியில் இலவச மருத்துவ முகாம்',
-    title_en: 'Free medical camp in Madurai East constituency',
-    category: 'Healthcare',
-    category_ta: 'சுகாதாரம்',
-    summary_ta: 'மதுரை கிழக்கு தொகுதியில் இலவச மருத்துவ பரிசோதனை முகாம் நடத்தப்பட்டது.',
-    summary_en: 'Free medical checkup camp conducted in Madurai East constituency.',
-    publishedAt: '2024-01-15T16:45:00Z',
-    source: 'Tamil Guardian',
-    imageUrl: '/api/placeholder/400/200',
-    likes: 123,
-    comments: 23,
-    ward: 'Ward 15',
-    constituency: 'Madurai East'
+    title_ta: 'கோயம்புத்தூர் கிழக்கு தொகுதியில் இலவச மருத்துவ முகாம்',
+    title_en: 'Free medical camp in Coimbatore East constituency',
+    author: 'DMK Health Wing',
+    date: '2024-03-10',
+    summary_en: 'Free medical checkup camp conducted in Coimbatore East constituency.',
+    summary_ta: 'கோயம்புத்தூர் கிழக்கு தொகுதியில் இலவச மருத்துவ பரிசோதனை முகாம் நடத்தப்பட்டது.',
+    image: 'https://images.unsplash.com/photo-1584362917165-526a968579e8?w=800&h=450&fit=crop',
+    category: 'Health',
+    tags: ['Healthcare', 'Free Camp', 'Medical'],
+    ward: 'Kavundampalayam',
+    constituency: 'Coimbatore East'
   },
   {
     id: 4,
-    title_ta: 'மதுரை வைகை நதி சுத்திகரிப்பு திட்டம் தொடக்கம்',
-    title_en: 'Madurai Vaigai River cleanup project begins',
-    category: 'Environment',
-    category_ta: 'சுற்றுச்சூழல்',
-    summary_ta: 'மதுரையில் வைகை நதி சுத்திகரிப்பு மற்றும் அழகுபடுத்தும் திட்டம் தொடங்கப்பட்டுள்ளது.',
-    summary_en: 'Vaigai River cleanup and beautification project launched in Madurai.',
+    title_ta: 'கோயம்புத்தூர் நொய்யல் ஆறு சுத்திகரிப்பு திட்டம் தொடங்குகிறது',
+    title_en: 'Coimbatore Noyyal River cleanup project begins',
+    author: 'DMK Environment Wing',
+    date: '2024-03-08',
+    summary_en: 'Noyyal River cleanup and beautification project launched in Coimbatore.',
+    summary_ta: 'கோயம்புத்தூரில் நொய்யல் ஆறு சுத்திகரிப்பு மற்றும் அழகுபடுத்தும் திட்டம் தொடங்கப்பட்டது.',
     publishedAt: '2024-01-15T12:20:00Z',
     source: 'Deccan Chronicle',
     imageUrl: '/api/placeholder/400/200',
@@ -130,7 +124,7 @@ export const News: React.FC = () => {
       {/* Header */}
       <div className="space-y-4">
         <h1 className={`text-2xl font-bold ${language === 'ta' ? 'font-tamil' : 'font-inter'}`}>
-          {language === 'ta' ? 'மதுரை செய்திகள்' : 'Madurai News'}
+          {language === 'ta' ? 'கோயம்புத்தூர் செய்திகள்' : 'Coimbatore News'}
         </h1>
         
         {/* Search and Filters */}
@@ -208,7 +202,7 @@ export const News: React.FC = () => {
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-2">
                         <Badge className={getCategoryColor(article.category)}>
-                          {language === 'ta' ? article.category_ta : article.category}
+                          {article.category}
                         </Badge>
                         <div className="flex items-center text-xs text-muted-foreground">
                           <MapPin className="h-3 w-3 mr-1" />
