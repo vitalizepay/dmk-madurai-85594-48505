@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* DMK Madurai Design System - All colors MUST be HSL */
+
+@layer base {
+  :root {
+    /* DMK Brand Colors */
+    --dmk-red: 353 84% 44%;           /* Primary DMK red #D71920 */
+    --dmk-red-dark: 353 84% 34%;      /* Darker red for hover states */
+    --dmk-black: 0 0% 0%;             /* DMK black */
+    --dmk-yellow: 45 100% 51%;        /* DMK yellow #F7B500 */
+    
+    /* Core System Colors */
+    --background: 0 0% 100%;
+    --foreground: 220 13% 13%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 220 13% 13%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 13% 13%;
+    
+    /* Primary uses DMK Red */
+    --primary: 353 84% 44%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 353 84% 34%;
+    
+    /* Secondary uses DMK Black */
+    --secondary: 0 0% 0%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-hover: 0 0% 20%;
+    
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    
+    --accent: 45 100% 51%;
+    --accent-foreground: 0 0% 0%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 353 84% 44%;
+    
+    --radius: 0.75rem;
+    
+    /* Success & Status Colors */
+    --success: 353 84% 44%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --info: 221 83% 53%;
+    --info-foreground: 0 0% 100%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(353 84% 44%), hsl(353 84% 34%));
+    --gradient-secondary: linear-gradient(135deg, hsl(0 0% 0%), hsl(0 0% 20%));
+    --gradient-hero: linear-gradient(135deg, hsl(353 84% 44%) 0%, hsl(0 0% 0%) 100%);
+    
+    /* Shadows */
+    --shadow-dmk: 0 10px 30px -10px hsl(353 84% 44% / 0.3);
+    --shadow-card: 0 4px 6px -1px hsl(220 13% 13% / 0.1);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .dark {
+    --background: 220 13% 9%;
+    --foreground: 210 40% 98%;
+    
+    --card: 220 13% 9%;
+    --card-foreground: 210 40% 98%;
+    
+    --popover: 220 13% 9%;
+    --popover-foreground: 210 40% 98%;
+    
+    --primary: 353 84% 44%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 353 84% 54%;
+    
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-hover: 0 0% 25%;
+    
+    --muted: 217 33% 18%;
+    --muted-foreground: 215 20% 65%;
+    
+    --accent: 45 100% 51%;
+    --accent-foreground: 0 0% 0%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --border: 217 33% 18%;
+    --input: 217 33% 18%;
+    --ring: 353 84% 44%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-inter;
+  }
+  
+  .font-tamil {
+    font-family: 'Noto Sans Tamil', sans-serif;
+  }
+  
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  .dmk-gradient {
+    background: var(--gradient-hero);
+  }
+  
+  .dmk-shadow {
+    box-shadow: var(--shadow-dmk);
+  }
+  
+  .smooth-transition {
+    transition: var(--transition-smooth);
+  }
+}
