@@ -11,12 +11,12 @@ interface LanguageContextType {
 const translations = {
   ta: {
     // App Title
-    'app.title': 'தி.மு.க - மதுரை',
-    'app.subtitle': 'மதுரை மாவட்ட நிர்வாக செயலி',
+    'app.title': 'தி.மு.க - கோயம்புத்தூர்',
+    'app.subtitle': 'கோயம்புத்தூர் மாவட்ட நிர்வாக செயலி',
     
     // Landing Page
     'landing.welcome': 'வணக்கம்!',
-    'landing.subtitle': 'மதுரை மாவட்ட நிர்வாக செயலி',
+    'landing.subtitle': 'கோயம்புத்தூர் மாவட்ட நிர்வாக செயலி',
     'landing.loginMessage': 'தொடர உள்நுழையவும்',
     
     // Authentication
@@ -115,12 +115,12 @@ const translations = {
   },
   en: {
     // App Title
-    'app.title': 'DMK - Madurai',
-    'app.subtitle': 'Madurai District Management App',
+    'app.title': 'DMK - Coimbatore',
+    'app.subtitle': 'Coimbatore District Management App',
     
     // Landing Page
     'landing.welcome': 'Welcome!',
-    'landing.subtitle': 'Madurai District Management App',
+    'landing.subtitle': 'Coimbatore District Management App',
     'landing.loginMessage': 'Please login to continue',
     
     // Authentication
