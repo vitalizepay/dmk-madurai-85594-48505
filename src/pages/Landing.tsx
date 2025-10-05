@@ -19,83 +19,97 @@ const Landing = () => {
 
   return (
     <div className="relative min-h-screen w-full overflow-hidden">
-      {/* Full-screen hero background with candidate photo */}
+      {/* Fresh Modern Background */}
       <div className="absolute inset-0 z-0">
+        {/* Gradient Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-red-600 via-red-500 to-yellow-400" />
+        
+        {/* DMK Leader Image with overlay */}
         <img
           src={candidateHero}
-          alt="DMK Coimbatore Leader"
-          className="w-full h-full object-cover object-center"
+          alt="DMK Leaders"
+          className="w-full h-full object-cover object-center opacity-30"
         />
-        {/* Bottom gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+        
+        {/* Pattern overlay for texture */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[length:20px_20px]" />
+        
+        {/* Central gradient overlay for content focus */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/30" />
       </div>
 
-      {/* Content overlay */}
-      <div className="relative z-10 min-h-screen flex flex-col">
-        {/* Top overlays */}
-        <header className="flex justify-between items-start p-4 md:p-6">
-          {/* DMK Symbol - Top Left */}
-          <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-3 shadow-lg">
-            <img 
-              src={dmkSymbol} 
-              alt="DMK Symbol" 
-              className="w-16 h-16 md:w-20 md:h-20"
-            />
+      {/* Language Toggle - Fixed Top Right */}
+      <div className="absolute top-4 right-4 z-20">
+        <Button
+          variant="secondary"
+          size="sm"
+          onClick={() => setLanguage(language === 'ta' ? 'en' : 'ta')}
+          className="bg-white/95 backdrop-blur-sm hover:bg-white font-tamil shadow-lg border-2 border-white/20"
+        >
+          {language === 'ta' ? 'English' : 'தமிழ்'}
+        </Button>
+      </div>
+
+      {/* Centered Content */}
+      <div className="relative z-10 min-h-screen flex items-center justify-center p-4">
+        <div className="w-full max-w-md mx-auto text-center space-y-8">
+          {/* DMK Symbol - Centered */}
+          <div className="flex justify-center mb-8">
+            <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-6 shadow-2xl border-4 border-yellow-400/50">
+              <img 
+                src={dmkSymbol} 
+                alt="DMK Symbol" 
+                className="w-24 h-24 md:w-32 md:h-32"
+              />
+            </div>
           </div>
-          
-          {/* Language Toggle - Top Right */}
-          <Button
-            variant="secondary"
-            size="sm"
-            onClick={() => setLanguage(language === 'ta' ? 'en' : 'ta')}
-            className="bg-white/95 backdrop-blur-sm hover:bg-white font-tamil shadow-lg"
-          >
-            {language === 'ta' ? 'English' : 'தமிழ்'}
-          </Button>
-        </header>
 
-        {/* Spacer */}
-        <div className="flex-1" />
-
-        {/* Bottom section with title and login button */}
-        <div className="p-6 md:p-8 pb-8 space-y-6">
-          {/* Title */}
-          <div className="text-center space-y-2">
-            <h1 className="text-3xl md:text-5xl font-bold text-white font-tamil drop-shadow-lg">
+          {/* Title Section - Centered */}
+          <div className="space-y-4">
+            <h1 className="text-4xl md:text-6xl font-bold text-white font-tamil drop-shadow-2xl">
               {language === 'ta' ? 'தி.மு.க' : 'DMK'}
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 font-tamil drop-shadow-lg">
-              {language === 'ta' ? 'கோயம்புத்தூர்' : 'Coimbatore'}
+            <div className="h-1 w-24 bg-yellow-400 mx-auto rounded-full"></div>
+            <p className="text-2xl md:text-3xl text-yellow-200 font-tamil drop-shadow-lg font-medium">
+              {language === 'ta' ? 'மதுரை' : 'Madurai'}
+            </p>
+            <p className="text-lg text-white/90 font-tamil drop-shadow">
+              {language === 'ta' 
+                ? 'மாவட்ட நிர்வாக செயலி' 
+                : 'District Management App'
+              }
             </p>
           </div>
 
-          {/* Login Button - Large and Prominent */}
-          <Button
-            onClick={handleLogin}
-            size="lg"
-            className="w-full h-16 text-xl font-semibold dmk-gradient text-white shadow-2xl hover:shadow-primary/50 transition-all duration-300 font-tamil"
-          >
-            {language === 'ta' ? 'உள் நுழை' : 'Login'} / {language === 'ta' ? 'Login' : 'உள் நுழை'}
-          </Button>
-          
-          <p className="text-center text-sm text-white/80 font-tamil">
-            {language === 'ta' 
-              ? 'எந்த பதிவும் தேவையில்லை - உடனடியாக நுழையுங்கள்' 
-              : 'No registration required - Enter instantly'
-            }
-          </p>
+          {/* Login Section - Centered */}
+          <div className="space-y-4">
+            <Button
+              onClick={handleLogin}
+              size="lg"
+              className="w-full h-16 text-xl font-semibold bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white shadow-2xl hover:shadow-red-500/50 transition-all duration-300 font-tamil border-2 border-yellow-400/30 rounded-xl"
+            >
+              {language === 'ta' ? 'உள் நுழை' : 'Enter App'}
+            </Button>
+            
+            <p className="text-sm text-white/80 font-tamil bg-black/20 backdrop-blur-sm rounded-lg px-4 py-2">
+              {language === 'ta' 
+                ? 'எந்த பதிவும் தேவையில்லை - உடனடியாக நுழையுங்கள்' 
+                : 'No registration required - Enter instantly'
+              }
+            </p>
+          </div>
         </div>
-
-        {/* Footer */}
-        <footer className="p-4 text-center">
-          <p className="text-xs text-white/70 font-tamil drop-shadow">
-            {language === 'ta' 
-              ? '© 2024 தி.மு.க கோயம்புத்தூர் • அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை'
-              : '© 2024 DMK Coimbatore • All rights reserved'
-            }
-          </p>
-        </footer>
       </div>
+
+      {/* Footer - Fixed Bottom */}
+      <footer className="absolute bottom-0 left-0 right-0 z-10 p-4 text-center">
+        <p className="text-xs text-white/70 font-tamil drop-shadow bg-black/20 backdrop-blur-sm rounded-lg px-4 py-2 inline-block">
+          {language === 'ta' 
+            ? '© 2024 தி.மு.க மதுரை • அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை'
+            : '© 2024 DMK Madurai • All rights reserved'
+          }
+        </p>
+      </footer>
     </div>
   );
 };
