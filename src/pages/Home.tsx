@@ -27,8 +27,8 @@ const mockStats = {
 const recentNews = [
   {
     id: 1,
-    title_ta: 'மதுரை தெற்கு தொகுதியில் சாலை புனரமைப்பு பணிகள் தொடக்கம்',
-    title_en: 'Road reconstruction work begins in Madurai South constituency',
+    title_ta: 'கோயம்புத்தூர் தெற்கு தொகுதியில் சாலை புனரமைப்பு பணிகள் தொடக்கம்',
+    title_en: 'Road reconstruction work begins in Coimbatore South constituency',
     time: '2 hours ago'
   },
   {
