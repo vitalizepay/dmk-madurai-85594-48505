@@ -131,4 +131,13 @@
   .smooth-transition {
     transition: var(--transition-smooth);
   }
+
+  @keyframes glow-pulse {
+    0%, 100% {
+      box-shadow: 0 0 20px hsl(var(--dmk-red) / 0.5), 0 0 40px hsl(var(--dmk-red) / 0.3);
+    }
+    50% {
+      box-shadow: 0 0 30px hsl(var(--dmk-red) / 0.7), 0 0 60px hsl(var(--dmk-red) / 0.5);
+    }
+  }
 }

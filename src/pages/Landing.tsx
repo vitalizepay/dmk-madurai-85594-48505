@@ -5,6 +5,7 @@ import candidateHero from "@/assets/candidate-hero.jpg";
 import heroBg1 from "@/assets/hero-bg-1.png";
 import heroBg2 from "@/assets/hero-bg-2.png";
 import dmkSymbol from "@/assets/dmk-symbol-new.png";
+import leaderImage from "@/assets/leader-namaste-new.png";
 import { useNavigate } from "react-router-dom";
 import { Instagram, Facebook } from "lucide-react";
 
@@ -111,28 +112,43 @@ const Landing = () => {
         {/* Spacer */}
         <div className="flex-1" />
 
-        {/* Bottom section with title and login button */}
+        {/* Bottom section with title, leader image and login button */}
         <div className="p-6 md:p-8 pb-8 space-y-6">
           {/* Title */}
           <div className="text-center space-y-2">
-            <h1 className="text-3xl md:text-5xl font-bold text-white font-tamil drop-shadow-lg">
+            <h1 className="text-4xl md:text-6xl font-bold text-white font-tamil drop-shadow-2xl">
               {language === 'ta' ? 'தி.மு.க' : 'DMK'}
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 font-tamil drop-shadow-lg">
+            <p className="text-2xl md:text-3xl text-white/95 font-tamil drop-shadow-2xl font-semibold">
               {language === 'ta' ? 'கோயம்புத்தூர்' : 'Coimbatore'}
             </p>
+          </div>
+
+          {/* Leader Image with Glow Effect */}
+          <div className="flex justify-center">
+            <div className="relative group">
+              <div className="absolute -inset-1 bg-gradient-to-r from-dmk-red via-dmk-black to-dmk-red rounded-2xl blur-xl opacity-75 group-hover:opacity-100 animate-pulse"></div>
+              <div className="relative">
+                <img 
+                  src={leaderImage} 
+                  alt="DMK Leaders"
+                  className="w-48 h-48 md:w-56 md:h-56 object-cover rounded-2xl shadow-2xl ring-4 ring-white/20 transform transition-all duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-dmk-red/20 to-transparent"></div>
+              </div>
+            </div>
           </div>
 
           {/* Login Button - Large and Prominent */}
           <Button
             onClick={handleLogin}
             size="lg"
-            className="w-full h-16 text-xl font-semibold dmk-gradient text-white shadow-2xl hover:shadow-primary/50 transition-all duration-300 font-tamil"
+            className="w-full h-16 text-xl font-semibold dmk-gradient text-white shadow-2xl hover:shadow-dmk-red/50 transition-all duration-300 font-tamil hover:scale-105 transform"
           >
             {language === 'ta' ? 'உள் நுழை' : 'Login'} / {language === 'ta' ? 'Login' : 'உள் நுழை'}
           </Button>
           
-          <p className="text-center text-sm text-white/80 font-tamil">
+          <p className="text-center text-sm text-white/90 font-tamil drop-shadow">
             {language === 'ta' 
               ? 'எந்த பதிவும் தேவையில்லை - உடனடியாக நுழையுங்கள்' 
               : 'No registration required - Enter instantly'
