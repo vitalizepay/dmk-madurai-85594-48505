@@ -16,8 +16,28 @@ import {
   Filter,
   Clock
 } from 'lucide-react';
+import councilMeeting1 from '@/assets/news-council-meeting-1.png';
+import councilMeeting2 from '@/assets/news-council-meeting-2.png';
 
 const mockNews = [
+  {
+    id: 0,
+    title_ta: 'கோவை மாநகராட்சி பிரதான அலுவலகத்தில் உள்ள விக்டோரியா ஹாலில் மாமன்ற கூட்டம் நடைபெற்றது',
+    title_en: 'Council Meeting held at Victoria Hall, Coimbatore Corporation Head Office',
+    author: 'DMK Coimbatore',
+    date: '2025-01-25',
+    summary_en: 'The council meeting was held at Victoria Hall in Coimbatore Corporation Head Office. Various development projects and civic issues were discussed in the meeting chaired by the Mayor.',
+    summary_ta: 'கோவை மாநகராட்சி பிரதான அலுவலகத்தில் உள்ள விக்டோரியா ஹாலில் மாமன்ற கூட்டம் நடைபெற்றது. மேயர் தலைமையில் நடைபெற்ற கூட்டத்தில் பல்வேறு அபிவிருத்தி திட்டங்கள் மற்றும் நகராட்சி பிரச்சினைகள் குறித்து ஆலோசனை நடைபெற்றது.',
+    images: [councilMeeting1, councilMeeting2],
+    category: 'Politics',
+    tags: ['Council', 'Meeting', 'Governance'],
+    ward: 'Multiple Wards',
+    constituency: 'Coimbatore Central',
+    publishedAt: '2025-01-25T10:30:00Z',
+    source: 'DMK Coimbatore',
+    likes: 892,
+    comments: 134
+  },
   {
     id: 1,
     title_ta: 'கோயம்புத்தூர் மாநகராட்சியில் புதிய சாலை திட்டங்கள் அறிவிப்பு',
@@ -187,14 +207,82 @@ export const News: React.FC = () => {
       <div className="space-y-4">
         {filteredNews.map((article) => (
           <Card key={article.id} className="overflow-hidden hover:shadow-lg smooth-transition">
-            <div className="md:flex">
-              <div className="md:w-1/3">
-                <img 
-                  src={article.imageUrl} 
-                  alt={language === 'ta' ? article.title_ta : article.title_en}
-                  className="w-full h-48 md:h-full object-cover"
-                />
+            {article.images && article.images.length > 0 ? (
+              <div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-2 p-2">
+                  {article.images.map((img, idx) => (
+                    <img 
+                      key={idx}
+                      src={img} 
+                      alt={`${language === 'ta' ? article.title_ta : article.title_en} - ${idx + 1}`}
+                      className="w-full h-64 object-cover rounded-lg"
+                    />
+                  ))}
+                </div>
+                
+                <CardHeader className="pb-3">
+                  <div className="flex items-start justify-between gap-3">
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-2">
+                        <Badge className={getCategoryColor(article.category)}>
+                          {article.category}
+                        </Badge>
+                        <div className="flex items-center text-xs text-muted-foreground">
+                          <MapPin className="h-3 w-3 mr-1" />
+                          {article.constituency}
+                        </div>
+                      </div>
+                      
+                      <CardTitle className={`text-lg leading-tight ${language === 'ta' ? 'font-tamil' : 'font-inter'}`}>
+                        {language === 'ta' ? article.title_ta : article.title_en}
+                      </CardTitle>
+                      
+                      <p className={`text-sm text-muted-foreground mt-2 ${language === 'ta' ? 'font-tamil' : 'font-inter'}`}>
+                        {language === 'ta' ? article.summary_ta : article.summary_en}
+                      </p>
+                    </div>
+                    
+                    <Button variant="ghost" size="sm">
+                      <Share2 className="h-4 w-4" />
+                    </Button>
+                  </div>
+                </CardHeader>
+                
+                <CardContent className="pt-0">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-4 text-xs text-muted-foreground">
+                      <div className="flex items-center">
+                        <Clock className="h-3 w-3 mr-1" />
+                        {formatDate(article.publishedAt)}
+                      </div>
+                      <div className="flex items-center">
+                        <ExternalLink className="h-3 w-3 mr-1" />
+                        {article.source}
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center gap-3">
+                      <div className="flex items-center gap-1 text-xs text-muted-foreground">
+                        <Heart className="h-3 w-3" />
+                        {article.likes}
+                      </div>
+                      <div className="flex items-center gap-1 text-xs text-muted-foreground">
+                        <MessageCircle className="h-3 w-3" />
+                        {article.comments}
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
               </div>
+            ) : (
+              <div className="md:flex">
+                <div className="md:w-1/3">
+                  <img 
+                    src={article.imageUrl} 
+                    alt={language === 'ta' ? article.title_ta : article.title_en}
+                    className="w-full h-48 md:h-full object-cover"
+                  />
+                </div>
               
               <div className="md:w-2/3">
                 <CardHeader className="pb-3">
@@ -252,6 +340,7 @@ export const News: React.FC = () => {
                 </CardContent>
               </div>
             </div>
+            )}
           </Card>
         ))}
       </div>
